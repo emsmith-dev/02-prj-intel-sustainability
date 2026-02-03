@@ -1,1 +1,257 @@
-/* Add your CSS here */
+/*
+  Make the site look more clean, modern, and premium:
+  - Use more whitespace and subtle shadows
+  - Add a sleeker font
+  - Soften card borders and add gentle hover effects
+  - Use a more elegant gradient for header and logo box
+*/
+
+body {
+  background-color: #040d15;
+  color: #1a1a1a;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.01em;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+/* Style for the blue box at the top (header) */
+header {
+  /* Gradient from light blue to light green for a fresh, sustainable feel */
+  background: linear-gradient(120deg, #1a2a33 0%, #23405a 100%); /* Dark blue gradient */
+  padding: 48px 0 36px 0;
+  text-align: center;
+  border-bottom: 2px solid #e0e6eb;
+}
+
+/* Use a gradient background for the logo container:
+   - Light green to medium blue for a fresh, sustainable look */
+header div {
+  background: rgba(30, 44, 56, 0.92); /* Slightly transparent dark overlay */
+  border-radius: 28px;
+  display: inline-block;
+  padding: 32px 48px 28px 48px;
+  box-shadow: 0 8px 32px rgba(44, 180, 99, 0.10);
+  border: 1.5px solid #2d6a4f;
+  margin-bottom: 24px;
+}
+
+/* Remove background from logo image so it doesn't add extra white */
+header img {
+  background: none;
+  width: 130px; /* Resize the logo */
+  height: auto; /* Keep aspect ratio */
+  display: block;
+  margin: 0 auto 16px auto; /* Center and add space below */
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(79, 163, 227, 0.10);
+  padding: 8px;
+}
+
+header h1 {
+  color: #97c3e1; /* Near white for strong contrast */
+  font-size: 2.2em;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: 0.01em;
+}
+
+header p {
+  color: #e0f7fa; /* Light blue-white for subheading */
+  font-size: 1.15em;
+  margin-top: 0;
+  margin-bottom: 0;
+  opacity: 0.96;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  background: #97c3e1; /* Off white for a clean background */
+  padding: 48px 0 40px 0;
+}
+
+section > div {
+  background: #fff; /* Card background */
+  border: 1.5px solid #e0e6eb; /* Light blue border */
+  border-radius: 0; /* No rounded edges, square corners */
+  box-shadow: 0 8px 32px rgba(44, 180, 99, 0.18); /* Stronger drop shadow */
+  width: 270px;
+  height: 270px; /* Make cards square */
+  padding: 28px 20px 22px 20px;
+  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+  min-height: unset;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+section > div:hover {
+  transform: translateY(-8px) scale(1.035);
+  box-shadow: 0 16px 48px rgba(79, 163, 227, 0.18);
+  border-color: #b6e5c3; /* Light green border on hover */
+}
+
+section h2 {
+  color: #2d6a4f; /* Deep green for year */
+  margin: 0 0 4px 0;
+  font-size: 1.25em;
+  font-weight: 600;
+}
+
+section h3 {
+  color: #1a4e7a; /* Darker blue for event title */
+  margin: 0 0 12px 0;
+  font-size: 1.08em;
+  font-weight: 500;
+}
+
+section p {
+  color: #333;
+  font-size: 1em;
+  opacity: 0.96;
+}
+
+/* Absolutely position year and header at the top, fixed size and spacing, no movement on hover */
+.card-header {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 16px;
+  pointer-events: none;
+}
+
+.card-header h2,
+.card-header h3 {
+  background: rgba(26, 42, 51, 0.55);
+  color: #fff;
+  border-radius: 6px;
+  padding: 4px 10px;
+  text-shadow: 0 2px 8px rgba(30,44,56,0.5);
+  box-shadow: 0 2px 8px rgba(30,44,56,0.10);
+  margin: 0 0 4px 0;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 1em;
+  transition: background 0.3s, color 0.3s;
+}
+
+.card-header h3 {
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 0.95em;
+}
+
+section > div:hover .card-header h2,
+section > div:hover .card-header h3 {
+  background: rgba(26, 42, 51, 0.85);
+  color: #fff;
+}
+
+/* Remove margin and padding from h2/h3 in card body */
+section > div h2,
+section > div h3 {
+  margin: 0;
+  padding: 0;
+  background: none;
+  color: inherit;
+  border-radius: 0;
+  box-shadow: none;
+  text-shadow: none;
+  display: none;
+}
+
+section > div p {
+  opacity: 0;
+  position: absolute;
+  left: 0; right: 0;
+  bottom: 24px;
+  z-index: 4;
+  padding: 0 18px;
+  background: rgba(26, 42, 51, 0.82);
+  color: #fff;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  text-align: center;
+}
+
+section > div:hover p {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+section > div:hover h2,
+section > div:hover h3 {
+  background: rgba(26, 42, 51, 0.85);
+  color: #fff;
+}
+
+section > div:hover h2 {
+  top: 32px;
+  font-size: 1.4em;
+}
+
+section > div:hover h3 {
+  top: 70px;
+  font-size: 1.1em;
+}
+
+/* Center images in each card with equal margins on all sides */
+.card-overlay {
+  position: absolute;
+  top: 25px; /* Leave space for header */
+  left: 0;
+  width: 100%;
+  height: calc(100% - 48px);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.card-overlay img {
+  max-width: 85%;
+  max-height: 85%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  margin: auto;
+  display: block;
+  border-radius: 0;
+  box-shadow: none;
+  opacity: 1;
+  filter: grayscale(0.7) brightness(0.85) contrast(1.1);
+}
+
+/* Responsive: Stack cards vertically on small screens */
+@media (max-width: 700px) {
+  section {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 24px 0 20px 0;
+  }
+  header div {
+    padding: 20px 10vw 16px 10vw;
+  }
+}
